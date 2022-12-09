@@ -23,7 +23,7 @@ export async function getAllNaughty() {
 
 export async function updateNice(id) {
   const result = await pool.query(
-    "UPDATE bootcampers SET nice = NOT nice WHERE id=$1",
+    "UPDATE bootcampers SET nice = NOT nice WHERE id=$1 RETURNING *",
     [id]
   );
   let updatedNice = result.rows[0];
