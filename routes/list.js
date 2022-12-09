@@ -33,7 +33,7 @@ listRouter.get("/naughty", async function (req, res) {
 });
 
 listRouter.patch("/:id", async function (req, res) {
-  const updatedNice = await updatedNice(req.params.id);
+  const updatedNice = await updateNice(req.params.id);
   res.json({
     success: true,
     payload: updatedNice,
